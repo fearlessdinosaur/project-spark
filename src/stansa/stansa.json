@@ -1,0 +1,50 @@
+{
+	"lines": [
+		{
+			"villain":"Oh, a brave little speck;
+a whispering spark amidst this sinking despair,
+a mix of defiance and senseless hot air.
+I see you, small thing;
+so finite, so pointless, so fated to die –
+to be snuffed –
+that the snuffer might very well as well be I.",
+			"replies": [
+				{
+					"key_word": "bitch",
+					"reply": "you smelly bitch",
+					"score": 2
+				},
+				{
+					"key_word": "Queen",
+					"reply": "you are my queen",
+					"score": 2
+				},
+				{
+					"key_word": "meh",
+					"reply": "meh indeed",
+					"score": 2	
+				}
+			]	
+		},
+		{
+			"villain":"lorem ipsum 2",
+			"replies": [
+				{
+					"key_word": "second reply",
+					"reply": "victory",
+					"score": 2
+				},
+				{
+					"key_word": "second reply too",
+					"reply": "loss",
+					"score": 2
+				},
+				{
+					"key_word": "second reply tree",
+					"reply": "meh to infinity",
+					"score": 2	
+				}
+			]		
+		},	
+	]
+}

@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://rt04sc8hut5q"]
+
+[ext_resource type="Script" path="res://speck.gd" id="1_814lu"]
+[ext_resource type="Script" path="res://Villain.gd" id="2_m8hk2"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_814lu")
+
+[node name="Villains_speech" type="Label" parent="."]
+offset_left = 167.0
+offset_top = 174.0
+offset_right = 997.0
+offset_bottom = 365.0
+horizontal_alignment = 1
+script = ExtResource("2_m8hk2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Hero_rebuttle" type="Label" parent="Villains_speech"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.117
+anchor_top = 1.607
+anchor_right = 1.113
+anchor_bottom = 2.461
+offset_left = 0.110008
+offset_top = 0.0629883
+offset_right = 0.209961
+offset_bottom = -0.0510254
+horizontal_alignment = 1
+
+[node name="reply" type="Button" parent="Villains_speech"]
+layout_mode = 0
+offset_left = 761.0
+offset_top = 404.0
+offset_right = 861.0
+offset_bottom = 439.0
+text = "Reply"
