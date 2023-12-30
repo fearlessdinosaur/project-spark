@@ -35,12 +35,17 @@ func _process(delta):
 			for x in story["lines"][current_pos]["replies"]:
 				var button = Button.new()
 				button.text = x["key_word"]
-				var button_pos = Vector2((self.position.x - len(button.text)) - 100,self.position.y - ( 60 * len(replies)) + counter)
+				var button_x = (self.position.x - len(button.text)) - 100
+				var button_y = self.position.y - ( 60 * len(replies)) + counter
+				
+				if(len(buttons) % 2 != 0):
+					button_x = (self.position.x + len(button.text)) + 500
+					counter += 80
+				var button_pos = Vector2(button_x,button_y)
 				button.set_position(button_pos)
 				button.pressed.connect(self._button_pressed.bind(button))
 				buttons.append(button)
 				self.add_child(button)
-				counter += 80
 		if(parent.pos >= len(story["lines"])):
 			print("score:" + str(score))
 			complete = true		
