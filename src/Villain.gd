@@ -25,6 +25,7 @@ func _process(delta):
 	if not complete:
 		if(current_pos != parent.pos and parent.pos < len(story["lines"])):
 			reply_button.visible = false
+			self.get_node("Hero_rebuttle").visible = false
 			current_pos+= 1
 			self.set_text(story["lines"][current_pos]["villain"])
 			var counter = 0
@@ -59,6 +60,7 @@ func _process(delta):
 func _button_pressed(button):
 	var replies = story["lines"][current_pos]["replies"]
 	hero_says = _get_appropriate_response(button.text)
+	self.get_node("Hero_rebuttle").visible = true
 	self.get_node("Hero_rebuttle").text =  hero_says
 	
 

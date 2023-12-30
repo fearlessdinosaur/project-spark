@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://rt04sc8hut5q"]
+[gd_scene load_steps=4 format=3 uid="uid://rt04sc8hut5q"]
 
 [ext_resource type="Script" path="res://speck.gd" id="1_814lu"]
 [ext_resource type="Script" path="res://Villain.gd" id="2_m8hk2"]
+[ext_resource type="Theme" uid="uid://c40u8dptvxlqm" path="res://base_theme.tres" id="3_pu7m0"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_814lu")
@@ -26,6 +27,7 @@ offset_left = 0.110008
 offset_top = 0.0629883
 offset_right = 0.209961
 offset_bottom = -0.0510254
+theme = ExtResource("3_pu7m0")
 horizontal_alignment = 1
 
 [node name="reply" type="Button" parent="Villains_speech"]
@@ -34,4 +36,5 @@ offset_left = 761.0
 offset_top = 404.0
 offset_right = 861.0
 offset_bottom = 439.0
+theme = ExtResource("3_pu7m0")
 text = "Reply"
