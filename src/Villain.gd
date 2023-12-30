@@ -31,6 +31,7 @@ func _process(delta):
 			replies = story["lines"][current_pos]["replies"]
 			for button in buttons:
 				button.queue_free()
+			buttons = []	
 			for x in story["lines"][current_pos]["replies"]:
 				var button = Button.new()
 				button.text = x["key_word"]
@@ -42,7 +43,13 @@ func _process(delta):
 				counter += 80
 		if(parent.pos >= len(story["lines"])):
 			print("score:" + str(score))
-			complete = true
+			complete = true		
+	else:
+		for button in buttons:
+			button.queue_free()
+			self.set_text("You scored " + str(score))
+			self.get_node("Hero_rebuttle").queue_free()
+		buttons = []
 			
 func _button_pressed(button):
 	var replies = story["lines"][current_pos]["replies"]
