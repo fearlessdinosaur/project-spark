@@ -27,7 +27,11 @@ func _process(delta):
 			reply_button.visible = false
 			self.get_node("Hero_rebuttle").visible = false
 			current_pos+= 1
-			self.set_text(story["lines"][current_pos]["villain"])
+			var villain_reply = ""
+			for letter in story["lines"][current_pos]["villain"]:
+				villain_reply += letter
+				self.set_text(villain_reply)
+				await get_tree().create_timer(0.09).timeout
 			var counter = 0
 			replies = story["lines"][current_pos]["replies"]
 			for button in buttons:
@@ -61,8 +65,11 @@ func _button_pressed(button):
 	var replies = story["lines"][current_pos]["replies"]
 	hero_says = _get_appropriate_response(button.text)
 	self.get_node("Hero_rebuttle").visible = true
-	self.get_node("Hero_rebuttle").text =  hero_says
-	
+	var output = ""
+	for letter in hero_says:
+		output += letter
+		self.get_node("Hero_rebuttle").text =  output
+		await get_tree().create_timer(0.1).timeout
 
 func _get_appropriate_response(key):
 		reply_button.visible = true
