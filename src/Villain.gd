@@ -4,10 +4,10 @@ var current_pos
 var parent
 var buttons
 var reply_button
-var score
 var complete
 var hero_says
 var replies
+var intents
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,9 +15,9 @@ func _ready():
 	parent = get_parent()
 	reply_button = get_node("reply")
 	buttons = []
-	score = 0
 	complete = false
 	var callable = Callable(self,"_reply_to_villain")
+	intents = {"Nihilistic": 0, "Stoic": 0, "Absurdist": 0}
 	reply_button.pressed.connect(callable)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -52,12 +52,18 @@ func _process(delta):
 				buttons.append(button)
 				self.add_child(button)
 		if(parent.pos >= len(story["lines"])):
-			print("score:" + str(score))
 			complete = true		
 	else:
 		for button in buttons:
 			button.queue_free()
-			self.set_text("You scored " + str(score))
+			
+			var disposition = "undecided"
+			var score = 0
+			for intent in intents:
+				if(intents[intent] > score):
+					score = intents[intent]
+					disposition = intent
+			self.set_text("You are of a %s disposition" % disposition)
 			self.get_node("Hero_rebuttle").queue_free()
 		buttons = []
 			
@@ -81,7 +87,7 @@ func _get_score(key):
 		reply_button.visible = false
 		for reply in replies:
 			if(reply["reply"] == key):
-				score += reply["score"]				
+				intents[reply["type"]] += 1				
 
 func _reply_to_villain():
 	parent.pos += 1

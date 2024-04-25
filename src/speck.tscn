@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://rt04sc8hut5q"]
+[gd_scene load_steps=4 format=3 uid="uid://di82y2s5gn25g"]
 
 [ext_resource type="Script" path="res://speck.gd" id="1_814lu"]
 [ext_resource type="Script" path="res://Villain.gd" id="2_m8hk2"]

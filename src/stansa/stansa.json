@@ -10,20 +10,35 @@ to be snuffed –
 that the snuffer might very well as well be I.",
 			"replies": [
 				{
-					"key_word": "1",
-					"reply": "reply 1",
-					"score": 1
+					"key_word": "Brave",
+					"reply": "I’ll suffer all night,\n if the cause is right.",
+					"type": "Nihilistic"
 				},
 				{
-					"key_word": "2",
-					"reply": "reply 2",
-					"score": 0
+					"key_word": "Despair",
+					"reply": "Snuff as you like, if you’re the king,\n if death is all you have to bring.",
+					"type": "Stoic"
 				},
 				{
-					"key_word": "3",
-					"reply": "reply 3",
-					"score": -1	
-				}
+					"key_word": "Senseless",
+					"reply": "Sad thing you must be,\n making a crisis from cosmic whimsy.",
+					"type": "Absurdist"
+				},
+				{
+					"key_word": "Defiance",
+					"reply": "your sight’s what brought you by to my side.\n My light’s so bright it’s captivating.",
+					"type": "Nihilistic"
+				},
+				{
+					"key_word": "Small",
+					"reply": "I’m a string, a fraying plaything,\n but even fleeting, a life’s a life.",
+					"type": "Stoic"
+				},
+				{
+					"key_word": "Pointless",
+					"reply": "Seeing me\n and charging a spark with theft of the dark..",
+					"type": "Absurdist"
+				},				
 			]	
 		},
 		{
@@ -32,17 +47,17 @@ that the snuffer might very well as well be I.",
 				{
 					"key_word": "second reply",
 					"reply": "victory",
-					"score": 1
+					"type": "Absurdist"
 				},
 				{
 					"key_word": "second reply too",
 					"reply": "loss",
-					"score": -1
+					"type": "Absurdist"
 				},
 				{
 					"key_word": "second reply tree",
 					"reply": "meh to infinity",
-					"score": 0
+					"type": "Absurdist"
 				}
 			]		
 		},	
