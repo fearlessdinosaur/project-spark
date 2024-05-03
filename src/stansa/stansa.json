@@ -38,7 +38,22 @@ that the snuffer might very well as well be I.",
 					"key_word": "Pointless",
 					"reply": "Seeing me\n and charging a spark with theft of the dark..",
 					"type": "Absurdist"
-				},				
+				},
+				{
+					"key_word": "See",
+					"reply": "Observe the world that I’m creating;\ntry me and fight, but try as you might, I’m not the kind to lose my shine.",
+					"type": "Nihilistic"
+				},
+				{
+					"key_word": "Snuffed",
+					"reply": "You can’t unmake that I was alive,\ncan’t unhear a bell that’s ringing.",
+					"type": "Stoic"
+				},
+				{
+					"key_word": "Might",
+					"reply": "You're merely keeping a guard\nto guard your heart against company.",
+					"type": "Absurdist"
+				}, 					 								
 			]	
 		},
 		{

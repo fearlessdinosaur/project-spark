@@ -8,4 +8,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _button_pressed():
-	get_parent().get_node("Hero_rebuttle").text = "set text!"
+	pass

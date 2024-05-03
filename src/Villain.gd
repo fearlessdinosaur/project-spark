@@ -8,6 +8,7 @@ var complete
 var hero_says
 var replies
 var intents
+var printing_hero_text = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,7 +42,8 @@ func _process(delta):
 				var button = Button.new()
 				button.text = x["key_word"]
 				var button_x = (self.position.x - len(button.text)) - 100
-				var button_y = self.position.y - ( 60 * len(replies)) + counter
+				var button_y = (self.position.y - (len(replies) * 25))  + counter 
+				print(self.position.y)
 				
 				if(len(buttons) % 2 != 0):
 					button_x = (self.position.x + len(button.text)) + 500
@@ -70,12 +72,25 @@ func _process(delta):
 func _button_pressed(button):
 	var replies = story["lines"][current_pos]["replies"]
 	hero_says = _get_appropriate_response(button.text)
-	self.get_node("Hero_rebuttle").visible = true
-	var output = ""
-	for letter in hero_says:
-		output += letter
-		self.get_node("Hero_rebuttle").text =  output
+	if not printing_hero_text:
+		printing_hero_text = true
+		stylish_output(hero_says, "Hero_rebuttle")
+	else:
+		printing_hero_text = false
 		await get_tree().create_timer(0.1).timeout
+		printing_hero_text = true
+		stylish_output(hero_says, "Hero_rebuttle")
+
+func stylish_output(txt, nodename):
+		self.get_node(nodename).visible = true
+		var output = ""
+		for letter in hero_says:
+			if not printing_hero_text:
+				break
+			output += letter
+			self.get_node(nodename).text =  output
+			await get_tree().create_timer(0.1).timeout
+		printing_hero_text = false
 
 func _get_appropriate_response(key):
 		reply_button.visible = true
@@ -91,5 +106,4 @@ func _get_score(key):
 
 func _reply_to_villain():
 	parent.pos += 1
-	print(replies, hero_says)
 	_get_score(hero_says)
